@@ -1,0 +1,15 @@
+pluginManagement {
+
+    gradle.ext.repros = {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
+        maven { url 'https://repo.spring.io/snapshot' }
+    }
+
+    repositories gradle.repros
+}
+
+dependencyResolutionManagement {
+    repositories gradle.repros
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+}
